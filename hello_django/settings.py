@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-etehu@#5kcb1(omo&29e*mx@07(&9vy^37=2+1wuhq@kq)iz6p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False  # ← Updated!
 
-iALLOWED_HOSTS = ["*"]  # ← Updated!
+APP_NAME = os.environ.get("FLY_APP_NAME")
+ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev"]  # ← Updated!
 
 
 # Application definition
